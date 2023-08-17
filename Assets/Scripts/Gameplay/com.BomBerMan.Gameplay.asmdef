@@ -1,0 +1,19 @@
+{
+    "name": "com.BomBerMan.Gameplay",
+    "rootNamespace": "com.BomBerMan.Gameplay",
+    "references": [
+        "GUID:c652c22d79d23044f9b2b3ec77bf1bbb",
+        "GUID:29492541a59d04a81b47a7f225e8a22d",
+        "GUID:14165214884ae4a619bfb290f28194a7",
+        "GUID:5f60e4aaa6bb777498b1c4e58f508d09"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
