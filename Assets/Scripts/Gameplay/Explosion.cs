@@ -24,4 +24,16 @@ public class Explosion : MonoBehaviour
         Destroy(gameObject, seconds);
     }
 
+
+}
+public class ExplosionSlowDown : Explosion
+{
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            collision.gameObject.GetComponent<MovementController>().speed=3;
+        }
+
+    }
 }

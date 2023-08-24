@@ -5,7 +5,7 @@ public class MovementController : MonoBehaviour
     public new Rigidbody2D rigidbody { get; private set; }
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
-
+    public int health = 1;
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputLeft = KeyCode.A;
@@ -17,7 +17,7 @@ public class MovementController : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererRight;
     public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
-
+    
 
     private void Awake()
     {
@@ -75,7 +75,13 @@ public class MovementController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            health--;
+
+            if (health > 0)
+                return;
+
             DeathSequence();
         }
 

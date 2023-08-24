@@ -12,11 +12,15 @@ public abstract class SkillActionBase : AtomAction, IDisposable
 
     protected Cooldown cooldown;
 
-    private void OnValidate() => Dispose();
+    protected MovementController movement;
 
-    public void Init()
+    
+
+    public void Init(MovementController movement)
     {
+        this.movement = movement;
         cooldown = new Cooldown(cooldownTime);
+
     }
 
     public abstract void OnKeyDown();
@@ -25,6 +29,7 @@ public abstract class SkillActionBase : AtomAction, IDisposable
 
     public virtual void Dispose()
     {
+        movement = null;
         // Reset cache
         cooldown = null;
     }

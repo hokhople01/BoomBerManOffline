@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NaughtyAttributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,18 +10,23 @@ using UnityEngine;
 public struct Skill
 {
     public KeyCode keycode;
+    [Expandable]
     public SkillActionBase skillAction;
 }
 
 public class SkillController : MonoBehaviour
 {
     public List<Skill> skillActionCollection = new List<Skill>();
-
+    private void OnDestroy()
+    {
+        
+    }
     private void Start()
     {
+        MovementController movement = GetComponent<MovementController>();
         foreach (var s in skillActionCollection)
         {
-            s.skillAction.Init();
+            s.skillAction.Init(movement);
         }
     }
 

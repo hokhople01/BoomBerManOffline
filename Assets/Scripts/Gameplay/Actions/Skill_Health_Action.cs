@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using UnityEngine;
 using CooldownAPI;
 
-[CreateAssetMenu(fileName = "Skill 1", menuName = "BomBerMan/Actions/Skills/Skill 1 Action")]
-public class Skill_1_Action : SkillActionBase
+[CreateAssetMenu(fileName = "Skill Health Action", menuName = "BomBerMan/Actions/Skills/Skill Health Action")]
+public class Skill_Health_Action : SkillActionBase
 {
     public override void OnKeyDown()
     {
@@ -16,6 +16,8 @@ public class Skill_1_Action : SkillActionBase
 
         cooldown.Activate();
         Debug.Log($"{this.GetType().Name} OnKeyDown");
+        // coding action for skill in here
+        movement.health += 1;
     }
 
     public override void OnKeyHold()

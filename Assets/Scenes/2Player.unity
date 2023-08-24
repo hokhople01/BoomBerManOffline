@@ -4577,6 +4577,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7853011840380468034, guid: f1a52b8ee3077bb4c938b8d0e7630b95, type: 3}
   m_PrefabInstance: {fileID: 1411779793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1709355468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709355463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b35167789feaa2448be8e1b1def6917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillActionCollection:
+  - keycode: 109
+    skillAction: {fileID: 11400000, guid: deb6cb16d3b8c95468a4c920c2ca1616, type: 2}
 --- !u!1 &1724581111
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,6 +5041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 513266671}
     m_Modifications:
+    - target: {fileID: 5138296072868692332, guid: 55e0679d968e0694e9aafa86080c2e98, type: 3}
+      propertyPath: skillActionCollection.Array.data[0].skillAction
+      value: 
+      objectReference: {fileID: 11400000, guid: debc84919e13cc6478067e853ac4306e, type: 2}
     - target: {fileID: 5138296073012993520, guid: 55e0679d968e0694e9aafa86080c2e98, type: 3}
       propertyPath: destructibleTiles
       value: 
