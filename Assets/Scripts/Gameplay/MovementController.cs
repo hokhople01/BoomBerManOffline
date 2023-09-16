@@ -6,6 +6,7 @@ public class MovementController : MonoBehaviour
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
     public int health = 1;
+    public int shield = 0;
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputLeft = KeyCode.A;
@@ -17,7 +18,7 @@ public class MovementController : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererRight;
     public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
-    
+
 
     private void Awake()
     {
@@ -52,7 +53,7 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
+
         Vector2 position = rigidbody.position;
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
 
@@ -75,14 +76,20 @@ public class MovementController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-            health--;
-
-            if (health > 0)
+            if (shield > 0)
+            {
+                shield -= 1;
                 return;
+            }
 
-            DeathSequence();
+            if (shield <= 0)
+            {
+                health -= 1;
+                DeathSequence();
+            }
+
         }
 
     }
@@ -92,10 +99,10 @@ public class MovementController : MonoBehaviour
         enabled = false;
         GetComponent<BombController>().enabled = false;
 
-        spriteRendererUp.enabled= false;
-        spriteRendererDown.enabled= false;
-        spriteRendererLeft.enabled= false;
-        spriteRendererRight.enabled= false;
+        spriteRendererUp.enabled = false;
+        spriteRendererDown.enabled = false;
+        spriteRendererLeft.enabled = false;
+        spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
 
         Invoke(nameof(OnDeathSequenceEnded), 1.25f);

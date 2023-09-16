@@ -4591,7 +4591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillActionCollection:
   - keycode: 109
-    skillAction: {fileID: 11400000, guid: deb6cb16d3b8c95468a4c920c2ca1616, type: 2}
+    skillAction: {fileID: 11400000, guid: 5a44e9b575fed6343b205a407ae4b0c0, type: 2}
 --- !u!1 &1724581111
 GameObject:
   m_ObjectHideFlags: 0
