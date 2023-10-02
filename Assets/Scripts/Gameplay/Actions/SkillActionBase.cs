@@ -9,8 +9,8 @@ using UnityEngine;
 public abstract class SkillActionBase : AtomAction, IDisposable
 {
     public float cooldownTime = 5f;
-
-    protected Cooldown cooldown;
+    public float currentTimeForCooldown => cooldown.Timer;
+    public Cooldown cooldown;
 
     protected MovementController movement;
 
