@@ -21,6 +21,13 @@
       "dependencies": {},
       "hash": "cc5dd52158f942a41ed2e1c519fafe70f183969e"
     },
+    "com.neuecc.unirx": {
+      "version": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "284d5c50d3f1ddd9fa7df3d382ea904732a9c2ff"
+    },
     "com.unity-atoms.unity-atoms-base-atoms": {
       "version": "4.4.8",
       "depth": 0,
