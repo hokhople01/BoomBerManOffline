@@ -16,6 +16,7 @@ namespace com.BomBerMan.Gameplay
         public MovementController movementController;
         // Ref skill controller
         public SkillController skillController;
+      
 
         [Header("UI REFERENCES")]
         public TextMeshProUGUI hpText;
@@ -60,7 +61,7 @@ namespace com.BomBerMan.Gameplay
                 {
                     var skill = skillCollection[k];
 
-                    //Observable.EveryUpdate().Subscribe(_ => Debug.Log(skill.skillAction.currentTimeForCooldown));
+                    //Observable.EveryUpdate().Subscribe(_ => Debug.Log(skill.skillAction.currentTimeForCooldown)); test show cooldown time
 
                     Observable.EveryUpdate()
                         .Where(x => skill.skillAction.currentTimeForCooldown != 0)

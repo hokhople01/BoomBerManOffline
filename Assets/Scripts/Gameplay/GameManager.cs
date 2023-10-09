@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
-
+    public GameOverScreen gameOverScreen;
     public void ChechWinState() 
     {
         int aliveCount = 0;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     }
     private void NewRound()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("GameOver");
     }
 
 }
