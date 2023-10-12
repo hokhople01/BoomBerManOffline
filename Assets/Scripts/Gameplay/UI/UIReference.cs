@@ -22,7 +22,6 @@ namespace com.BomBerMan.Gameplay
         public TextMeshProUGUI hpText;
         public TextMeshProUGUI shieldText;
         public TextMeshProUGUI skillCooldownText;
-        public TextMeshProUGUI skill2CooldownText;
     }
 
     public class UIReference : MonoBehaviour

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MovementController
 {
     public GameObject[] players;
     public GameOverScreen gameOverScreen;
@@ -28,7 +28,11 @@ public class GameManager : MonoBehaviour
     }
     private void NewRound()
     {
-        SceneManager.LoadScene("GameOver");
+         
+            SceneManager.LoadScene("GameOver");
+
+          
+       
     }
 
 }
