@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public new Rigidbody2D rigidbody { get; private set; }
-    private Vector2 direction = Vector2.down;
+    public Vector2 direction = Vector2.down;
     public float speed = 5f;
     public int health = 1;
     public int shield = 0;
@@ -26,7 +26,7 @@ public class MovementController : MonoBehaviour
         activeSpriteRenderer = spriteRendererDown;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (Input.GetKey(inputUp))
         {
@@ -51,7 +51,7 @@ public class MovementController : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
 
         Vector2 position = rigidbody.position;
@@ -60,7 +60,7 @@ public class MovementController : MonoBehaviour
         rigidbody.MovePosition(position + translation);
     }
 
-    private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRenderer)
+    protected virtual void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRenderer)
     {
         direction = newDirection;
 
@@ -74,7 +74,7 @@ public class MovementController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
@@ -94,7 +94,7 @@ public class MovementController : MonoBehaviour
 
     }
 
-    private void DeathSequence()
+    public virtual void DeathSequence()
     {
         enabled = false;
         GetComponent<BombController>().enabled = false;
