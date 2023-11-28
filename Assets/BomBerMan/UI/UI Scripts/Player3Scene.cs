@@ -7,6 +7,6 @@ public class Player3Scene : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene("3Player");
+        SceneManager.LoadScene("boss");
     }
 }
